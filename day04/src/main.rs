@@ -1,8 +1,3 @@
-use std::fs::File;
-use std::io::{self, BufReader, BufRead};
-use std::time::Instant;
-use std::env;
-
 fn get_accessible_rolls(grid: &[Vec<u32>], row_idx: usize, col_idx: usize) -> u32 {
     if grid[row_idx][col_idx] == 0 {
         return 0;
@@ -38,7 +33,7 @@ fn get_accessible_rolls(grid: &[Vec<u32>], row_idx: usize, col_idx: usize) -> u3
     accessible_score
 }
 
-fn main() -> io::Result<()> {
+fn main() -> std::io::Result<()> {
 
     let input = std::fs::read_to_string("input.txt").expect("Unable to read input file");
 
